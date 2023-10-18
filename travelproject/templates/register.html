@@ -1,0 +1,109 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>register</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h1>Registration</h1>-->
+<!--    <form action="register" method="post">-->
+<!--        {% csrf_token %}-->
+<!--        <input type="text" name="username" placeholder="Enter your Username"> <br>-->
+<!--        <input type="text" name="first_name" placeholder="Enter your First Name"> <br>-->
+<!--        <input type="text" name="last_name" placeholder="Enter your Last Name"> <br>-->
+<!--        <input type="email" name="email" placeholder="Enter your email"> <br>-->
+<!--        <input type="password" name="password" placeholder="Enter your password"> <br>-->
+<!--        <input type="password" name="password1" placeholder="Confirm your password"> <br>-->
+<!--        <input type="submit" value="submit">-->
+<!--    </form>-->
+
+<!--    {% for msg in messages %}-->
+<!--        {{msg}}-->
+<!--    {% endfor %}-->
+
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .card {
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .card-header {
+            background-color: #007BFF;
+            color: #fff;
+            text-align: center;
+            border-bottom: none;
+        }
+        .card-body {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Create an Account</h2>
+                    </div>
+                    <div class="card-body">
+                        <form action="register" method="post">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control" id="username" name="username" placeholder="Enter your Username" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="first_name">First Name</label>
+                                <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter your First Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="last_name">Last Name</label>
+                                <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Enter your Last Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Enter your Password" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password1">Confirm Password</label>
+                                <input type="password" class="form-control" id="password1" name="password1" placeholder="Confirm your Password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+                        </form>
+
+                        {% for msg in messages %}
+                        {{msg}}
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
